@@ -18,19 +18,31 @@ class MainActivity : AppCompatActivity() {
 
 
         val items : MutableList<String> = mutableListOf()
-        items.add("Prueba 1")
-        items.add("Prueba 2")
-        items.add("Prueba 3")
+        items.add("ITEM 1")
+        items.add("ITEM 2")
+        items.add("ITEM 3")
 
         adaptador.setItems(items)
 
 
+        btnAdd.setOnClickListener {
+            val pos : Int =  items.size.toInt()+1
+            items.add("ITEM " + pos)
+            adaptador.setItems(items)
+        }
+
+
         lista.layoutManager = LinearLayoutManager(this)
         lista.adapter = adaptador
+
+
+
     }
 
     fun showItemClick(position:Int){
         val item = adaptador.getItem(position)
         Toast.makeText(this, item, Toast.LENGTH_SHORT).show()
     }
+
+
 }
