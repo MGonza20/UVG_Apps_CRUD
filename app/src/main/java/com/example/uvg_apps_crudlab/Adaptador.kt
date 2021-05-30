@@ -28,6 +28,11 @@ class Adaptador(private val clickListener: (Int) -> Unit) : RecyclerView.Adapter
         notifyDataSetChanged()
     }
 
+    fun removeeItem(pos: Int){
+        items.removeAt(pos)
+        notifyDataSetChanged()
+    }
+
     fun getItem(position: Int) : String {
         return items[position]
     }

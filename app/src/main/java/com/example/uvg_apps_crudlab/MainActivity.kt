@@ -34,14 +34,13 @@ class MainActivity : AppCompatActivity() {
 
         lista.layoutManager = LinearLayoutManager(this)
         lista.adapter = adaptador
-
-
+        
 
     }
 
     fun showItemClick(position:Int){
         val item = adaptador.getItem(position)
-        Toast.makeText(this, item, Toast.LENGTH_SHORT).show()
+        adaptador.removeeItem(position)
     }
 
 
